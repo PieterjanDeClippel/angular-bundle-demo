@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BsNavbarModule } from '@mintplayer/ng-bootstrap';
+// import { BsNavbarModule } from '@mintplayer/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import { DirectivesModule } from './directives/directives.module';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    BsNavbarModule,
+    // BsNavbarModule,
     DirectivesModule,
     AppRoutingModule
   ],
