@@ -1,7 +1,262 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "libs",
   "projects": {
+    "demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/demo",
+      "sourceRoot": "apps/demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/demo",
+            "index": "apps/demo/src/index.html",
+            "main": "apps/demo/src/main.ts",
+            "polyfills": "apps/demo/src/polyfills.ts",
+            "tsConfig": "apps/demo/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/assets"
+            ],
+            "styles": [
+              "apps/demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "100kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo/src/environments/environment.ts",
+                  "with": "apps/demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "demo:build:production"
+            },
+            "development": {
+              "browserTarget": "demo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/demo/src/test.ts",
+            "polyfills": "apps/demo/src/polyfills.ts",
+            "tsConfig": "apps/demo/tsconfig.spec.json",
+            "karmaConfig": "apps/demo/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/assets"
+            ],
+            "styles": [
+              "apps/demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "mintplayer-ng-bootstrap": {
+      "projectType": "library",
+      "root": "libs/mintplayer-ng-bootstrap",
+      "sourceRoot": "libs/mintplayer-ng-bootstrap/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/mintplayer-ng-bootstrap/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/mintplayer-ng-bootstrap/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/mintplayer-ng-bootstrap/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/mintplayer-ng-bootstrap/src/test.ts",
+            "tsConfig": "libs/mintplayer-ng-bootstrap/tsconfig.spec.json",
+            "karmaConfig": "libs/mintplayer-ng-bootstrap/karma.conf.js"
+          }
+        }
+      }
+    },
+    "mintplayer-ng-animations": {
+      "projectType": "library",
+      "root": "libs/mintplayer-ng-animations",
+      "sourceRoot": "libs/mintplayer-ng-animations/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/mintplayer-ng-animations/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/mintplayer-ng-animations/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/mintplayer-ng-animations/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/mintplayer-ng-animations/src/test.ts",
+            "tsConfig": "libs/mintplayer-ng-animations/tsconfig.spec.json",
+            "karmaConfig": "libs/mintplayer-ng-animations/karma.conf.js"
+          }
+        }
+      }
+    },
+    "mintplayer-ng-click-outside": {
+      "projectType": "library",
+      "root": "libs/mintplayer-ng-click-outside",
+      "sourceRoot": "libs/mintplayer-ng-click-outside/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/mintplayer-ng-click-outside/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/mintplayer-ng-click-outside/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/mintplayer-ng-click-outside/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/mintplayer-ng-click-outside/src/test.ts",
+            "tsConfig": "libs/mintplayer-ng-click-outside/tsconfig.spec.json",
+            "karmaConfig": "libs/mintplayer-ng-click-outside/karma.conf.js"
+          }
+        }
+      }
+    },
+    "mintplayer-ng-focus-on-load": {
+      "projectType": "library",
+      "root": "libs/mintplayer-ng-focus-on-load",
+      "sourceRoot": "libs/mintplayer-ng-focus-on-load/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/mintplayer-ng-focus-on-load/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/mintplayer-ng-focus-on-load/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/mintplayer-ng-focus-on-load/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/mintplayer-ng-focus-on-load/src/test.ts",
+            "tsConfig": "libs/mintplayer-ng-focus-on-load/tsconfig.spec.json",
+            "karmaConfig": "libs/mintplayer-ng-focus-on-load/karma.conf.js"
+          }
+        }
+      }
+    },
+    "mintplayer-ng-qr-code": {
+      "projectType": "library",
+      "root": "libs/mintplayer-ng-qr-code",
+      "sourceRoot": "libs/mintplayer-ng-qr-code/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/mintplayer-ng-qr-code/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/mintplayer-ng-qr-code/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/mintplayer-ng-qr-code/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/mintplayer-ng-qr-code/src/test.ts",
+            "tsConfig": "libs/mintplayer-ng-qr-code/tsconfig.spec.json",
+            "karmaConfig": "libs/mintplayer-ng-qr-code/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }

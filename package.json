@@ -4,13 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build mintplayer-ng-animations --configuration production && ng build mintplayer-ng-click-outside --configuration production && ng build mintplayer-ng-focus-on-load --configuration production && ng build mintplayer-ng-qr-code --configuration production && ng build mintplayer-ng-bootstrap --configuration production && ng build demo --source-map --configuration production",
+    "analyze:sme": "source-map-explorer dist/demo/*",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
+    "@angular/cdk": "^14.2.0",
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
     "@angular/core": "^14.2.0",
@@ -18,11 +20,17 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@mintplayer/ng-pagination": "^14.2.2",
+    "@mintplayer/qr-code": "^1.0.1",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
+    "ngx-highlightjs": "^7.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^14.2.10",
     "@angular/cli": "~14.2.9",
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
@@ -32,6 +40,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^14.2.0",
+    "source-map-explorer": "^2.5.3",
     "typescript": "~4.7.2"
   }
 }

@@ -1,0 +1,19 @@
+<div bsDropdown [(isOpen)]="isOpen" [hasBackdrop]="false" [closeOnClickOutside]="true">
+    <input type="text" class="form-control" #textbox [(ngModel)]="searchterm" (ngModelChange)="onProvideSuggestions($event)" (keyup.enter)="onSubmit()" />
+    <div *bsDropdownMenu>
+        <ul class="dropdown-menu d-block position-static" [style.width.px]="hostWidth$ | async">
+            <bs-progress *ngIf="isLoading$ | async" [height]="2" [isIndeterminate]="true"></bs-progress>
+            <li *ngIf="isLoading$ | async">
+                <a class="dropdown-item disabled">{{ isLoadingText }}</a>
+            </li>
+            <ng-container *ngIf="(isLoading$ | async) === false">
+                <li *ngIf="showNoSuggestions$ | async">
+                    <a class="dropdown-item disabled">{{ noSuggestionsText }}</a>
+                </li>
+                <li *ngFor="let suggestion of (suggestions$ | async)" (click)="suggestionClicked(suggestion)">
+                    <a class="dropdown-item cursor-pointer">{{ suggestion.text }}</a>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

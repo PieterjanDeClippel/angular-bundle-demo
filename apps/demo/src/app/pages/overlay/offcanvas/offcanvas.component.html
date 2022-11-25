@@ -1,0 +1,114 @@
+<h1>Offcanvas</h1>
+<h2>Demo</h2>
+<bs-grid class="text-center">
+    <div bsRow>
+        <div [bsColumn]="{md: 12}" class="text-center">
+            <span class="mx-5">Show offcanvas</span>
+            <button class="btn btn-primary" (click)="showOffcanvas('top')">Top</button>
+            <button class="btn btn-primary" (click)="showOffcanvas('bottom')">Bottom</button>
+            <button class="btn btn-primary" (click)="sidebarState = 'open'">Left</button>
+            <button class="btn btn-primary" (click)="showOffcanvas('end')">Right</button>
+            <br>
+            <button class="btn btn-primary" (click)="offcanvasState = 'closed'">Hide offcanvas</button>
+            <ng-container *ngIf="(position$ | async) as position">
+                <bs-offcanvas [(state)]="offcanvasState" [position]="position" [hasBackdrop]="true" (backdropClick)="offcanvasState = 'closed'">
+                    <div *bsOffcanvasContent>
+                        <bs-offcanvas-header>
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                            <bs-close bsOffcanvasClose></bs-close>
+                        </bs-offcanvas-header>
+                        <bs-offcanvas-body>
+                            <input type="checkbox">
+                            <div>
+                                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                            </div>
+                            <div bsDropdown class="dropdown mt-3">
+                                <button bsDropdownToggle class="btn btn-secondary dropdown-toggle" type="button">
+                                    Dropdown button
+                                </button>
+                                <ul *bsDropdownMenu class="dropdown-menu position-static show">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </bs-offcanvas-body>
+                    </div>
+                </bs-offcanvas>
+            </ng-container>
+            <bs-offcanvas [(state)]="sidebarState" [position]="'start'" [hasBackdrop]="true" (backdropClick)="sidebarState = 'closed'">
+                <div *bsOffcanvasContent>
+                    <bs-offcanvas-body [noPadding]="true">
+                        <bs-accordion class="d-block">
+                            <bs-accordion-tab>
+                                <bs-accordion-tab-header>Dishes</bs-accordion-tab-header>
+        
+                                <bs-accordion class="d-block">
+                                    <bs-accordion-tab>
+                                        <bs-accordion-tab-header>Appetizer</bs-accordion-tab-header>
+                                        <bs-accordion class="d-block">
+                                            <a [routerLink]='[]' class="d-block p-2">Shrimp salad</a>
+                                            <a [routerLink]='[]' class="d-block p-2">Cucumber salad</a>
+                                            <a [routerLink]='[]' class="d-block p-2">Egg salad</a>
+                                        </bs-accordion>
+                                    </bs-accordion-tab>
+                                    <bs-accordion-tab>
+                                        <bs-accordion-tab-header>First course</bs-accordion-tab-header>
+                                        <bs-accordion class="d-block">
+                                            <a [routerLink]='[]' class="d-block p-2">Croque monsieur</a>
+                                            <a [routerLink]='[]' class="d-block p-2">Mini pizzas</a>
+                                        </bs-accordion>
+                                    </bs-accordion-tab>
+                                    <bs-accordion-tab>
+                                        <bs-accordion-tab-header>Main course</bs-accordion-tab-header>
+                                        <bs-accordion class="d-block">
+                                            <a [routerLink]='[]' class="d-block p-2">Macaroni</a>
+                                            <a [routerLink]='[]' class="d-block p-2">Lasagne Bolognaise</a>
+                                            <a [routerLink]='[]' class="d-block p-2">Gratin</a>
+                                        </bs-accordion>
+                                    </bs-accordion-tab>
+        
+                                    <bs-accordion-tab>
+                                        <bs-accordion-tab-header>Dessert</bs-accordion-tab-header>
+                                        <bs-accordion class="d-block">
+        
+                                            <bs-accordion-tab>
+                                                <bs-accordion-tab-header>Anything with chocolate</bs-accordion-tab-header>
+                                                <bs-accordion class="d-block">
+                                                    <a [routerLink]='[]' class="d-block p-2">Chocolate mousse</a>
+                                                    <a [routerLink]='[]' class="d-block p-2">Chocolate cake</a>
+                                                    <a [routerLink]='[]' class="d-block p-2">Chocolate ice cream</a>
+                                                </bs-accordion>
+                                            </bs-accordion-tab>
+        
+                                            <bs-accordion-tab>
+                                                <bs-accordion-tab-header>Anything with cream</bs-accordion-tab-header>
+                                                <bs-accordion class="d-block">
+                                                    <a [routerLink]='[]' class="d-block p-2">Ice cream</a>
+                                                    <a [routerLink]='[]' class="d-block p-2">Dame blanche</a>
+                                                </bs-accordion>
+                                            </bs-accordion-tab>
+        
+                                        </bs-accordion>
+                                    </bs-accordion-tab>
+                                </bs-accordion>
+                            </bs-accordion-tab>
+                            <bs-accordion-tab>
+                                <bs-accordion-tab-header>Management</bs-accordion-tab-header>
+                                <bs-accordion class="d-block">
+                                    <a [routerLink]='[]' class="d-block p-2">Manage categories</a>
+                                    <a [routerLink]='[]' class="d-block p-2">Manage dishes</a>
+                                </bs-accordion>
+                            </bs-accordion-tab>
+                        </bs-accordion>
+                    </bs-offcanvas-body>
+                </div>
+            </bs-offcanvas>
+        </div>
+    </div>
+</bs-grid>
+
+<h2>Code</h2>
+<p>
+    The code is available <a [href]="gitRepo + 'pages/overlay/offcanvas'" target="_blank">here</a>.
+</p>
