@@ -7,11 +7,9 @@ import { BsSnackbarComponent, BsSnackbarService } from '@mintplayer/ng-bootstrap
   styleUrls: ['./snackbar.component.scss']
 })
 export class SnackbarComponent {
-  constructor(private snackbarService: BsSnackbarService, @Inject('GIT_REPO') gitRepo: string) {
-    this.gitRepo = gitRepo;
+  constructor(private snackbarService: BsSnackbarService) {
   }
 
-  gitRepo: string;
   snackbar: BsSnackbarComponent | null = null;
   showSnackbar(template: TemplateRef<any>) {
      this.snackbar = this.snackbarService.show(template);

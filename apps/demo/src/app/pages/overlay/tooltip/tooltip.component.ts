@@ -7,11 +7,7 @@ import { Position } from '@mintplayer/ng-bootstrap';
   styleUrls: ['./tooltip.component.scss']
 })
 export class TooltipComponent {
-  constructor(@Inject('GIT_REPO') gitRepo: string) {
-    this.gitRepo = gitRepo;
-  }
 
-  gitRepo: string;
   tooltipPosition = Position;
 
 }

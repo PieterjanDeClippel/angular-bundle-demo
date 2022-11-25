@@ -8,12 +8,10 @@ import { TagService } from '../../../services/tag/tag.service';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
-  constructor(private tagService: TagService, @Inject('GIT_REPO') gitRepo: string) {
-    this.gitRepo = gitRepo;
+  constructor(private tagService: TagService) {
   }
 
   isOpen = false;
-  gitRepo: string;
   tagSuggestions: Tag[] = [];
   selectedTags: Tag[] = [];
 

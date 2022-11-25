@@ -9,15 +9,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class OffcanvasComponent {
 
-  constructor(@Inject('GIT_REPO') gitRepo: string) {
-    this.gitRepo = gitRepo;
-  }
-  
   position$ = new BehaviorSubject<OffcanvasPosition>('start');
   offcanvasState: BsViewState = 'closed';
   sidebarState: BsViewState = 'closed';
   
-  gitRepo: string;
   showOffcanvas(position: OffcanvasPosition) {
     this.position$.next(position);
     setTimeout(() => this.offcanvasState = 'open', 50);
