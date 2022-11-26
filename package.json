@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build mintplayer-ng-animations --configuration production && ng build mintplayer-ng-click-outside --configuration production && ng build mintplayer-ng-focus-on-load --configuration production && ng build mintplayer-ng-bootstrap --configuration production && ng build demo --source-map --configuration production",
+    "build": "ng build mintplayer-ng-animations --configuration production && ng build mintplayer-ng-click-outside --configuration production && ng build mintplayer-ng-focus-on-load --configuration production && ng build mintplayer-ng-bootstrap --configuration production && ng build demo --configuration production",
     "analyze:sme": "source-map-explorer dist/demo/*",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

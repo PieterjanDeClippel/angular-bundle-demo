@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
-import { Color } from '../../enums';
+import { Color } from '../../enums/color.enum';
 
 @Component({
   selector: 'bs-badge',

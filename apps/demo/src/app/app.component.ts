@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { Color } from '@mintplayer/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,5 @@ import { Component, Inject } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  colors = Color;
 }

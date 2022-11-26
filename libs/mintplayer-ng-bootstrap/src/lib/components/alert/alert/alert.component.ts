@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FadeInOutAnimation } from '@mintplayer/ng-animations';
-import { Color } from '../../../enums';
+import { Color } from '../../../enums/color.enum';
 
 @Component({
   selector: 'bs-alert',
