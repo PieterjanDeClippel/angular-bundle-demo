@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Optional, Output, ViewChild } from '@angular/core';
 import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
-import { BsToggleButtonGroupDirective } from '..';
+import { BsToggleButtonGroupDirective } from '../directives/toggle-button-group/toggle-button-group.directive';
 import { BsCheckStyle } from '../types/check-style';
 
 @Component({

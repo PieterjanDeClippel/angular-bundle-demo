@@ -1,9 +1,9 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { BehaviorSubject, filter, map, Observable, Subject, take, takeUntil } from 'rxjs';
-import { Resource, ResourceGroup } from '../../interfaces';
+import { Resource } from '../../interfaces/resource';
+import { ResourceGroup } from '../../interfaces/resource-group';
 import { ResourceOrGroup } from '../../interfaces/resource-or-group';
 import { SchedulerStampWithSlots } from '../../interfaces/scheduler-stamp-with-slots';
-import { TimeSlot } from '../../interfaces/time-slot';
 
 @Component({
   selector: 'bs-resource-group-presenter',

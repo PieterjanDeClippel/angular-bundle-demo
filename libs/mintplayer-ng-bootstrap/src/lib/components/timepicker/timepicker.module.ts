@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BsTimepickerComponent } from './timepicker.component';
-import { BsDropdownModule } from '../dropdown';
+import { BsDropdownModule } from '../dropdown/dropdown.module';
 import { EnhancedPasteModule } from '../../directives/enhanced-paste/enhanced-paste.module';
 
 @NgModule({

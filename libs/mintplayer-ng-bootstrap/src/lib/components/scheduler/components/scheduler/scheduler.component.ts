@@ -11,7 +11,7 @@ import { SchedulerEventWithParts } from '../../interfaces/scheduler-event-with-p
 import { TimeSlot } from '../../interfaces/time-slot';
 import { BsTimelineService } from '../../services/timeline/timeline.service';
 import { ResourceGroup } from '../../interfaces/resource-group';
-import { Resource } from '../../interfaces';
+import { Resource } from '../../interfaces/resource';
 import { SchedulerStampWithSlots } from '../../interfaces/scheduler-stamp-with-slots';
 import { WeekOptions } from '../../interfaces/week-options';
 import { TimelineOptions } from '../../interfaces/timeline-options';

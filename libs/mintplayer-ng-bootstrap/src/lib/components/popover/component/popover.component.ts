@@ -1,7 +1,7 @@
 import { Component, HostBinding, Inject, Input, TemplateRef } from '@angular/core';
 import { FadeInOutAnimation } from '@mintplayer/ng-animations';
 import { BehaviorSubject, map, Observable } from 'rxjs';
-import { Position } from '../../../enums';
+import { Position } from '../../../enums/position.enum';
 import { POPOVER_CONTENT } from '../providers/popover-content.provider';
 
 @Component({

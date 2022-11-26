@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { BehaviorSubject, combineLatest, map, Observable, Subject, takeUntil } from 'rxjs';
 import { PageWithSelection } from '../../../interfaces/page-with-selection';
-import { Size } from '../../../types';
+import { Size } from '../../../types/size';
 
 @Component({
   selector: 'bs-pagination',
